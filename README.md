@@ -3,7 +3,7 @@
 [![n8n](https://img.shields.io/badge/n8n-automatisation-blue?logo=n8n)](https://n8n.io/)  
 [![Render](https://img.shields.io/badge/Render-deployment-green?logo=render)](https://render.com/)  
 [![Licence MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](./LICENSE)  
-[![Site démo](https://img.shields.io/badge/Démo-en%20ligne-orange)](LIEN_VERS_TON_SITE)
+[![Site démo](https://img.shields.io/badge/Démo-en%20ligne-orange)](https://n8n-render-auto-yf0i.onrender.com)
 
 ---
 
@@ -17,7 +17,7 @@ Ce projet permet d’héberger **[n8n](https://n8n.io/)** (un outil d’automati
 
 ## 🌍 Démo en ligne
 
-🔗 [**Accéder à l’instance publique de n8n**](LIEN_VERS_TON_SITE)  
+🔗 [**Accéder à l’instance publique de n8n**](https://n8n-render-auto-yf0i.onrender.com)  
 
 ---
 
@@ -43,9 +43,10 @@ Cliquez sur **[Fork](https://docs.github.com/fr/get-started/quickstart/fork-a-re
 |----------------------------|------------------|-------------|
 | `N8N_BASIC_AUTH_ACTIVE`   | `true`           | Active l’authentification |
 | `N8N_BASIC_AUTH_USER`     | `admin`          | Nom d’utilisateur |
-| `N8N_BASIC_AUTH_PASSWORD` | `motdepasse123`  | Mot de passe |
+| `N8N_BASIC_AUTH_PASSWORD` | `motdepassefort`  | Mot de passe |
 | `N8N_ENCRYPTION_KEY`      | `clé_ultra_secrète` | Clé de chiffrement |
-| `WEBHOOK_TUNNEL_URL`      | `https://...`    | (optionnel) URL Render |
+| `N8N_HOST`      | `n8n-n8n_render_auto.onrender.com`    | (optionnel) URL Render |
+| `WEBHOOK_TUNNEL_URL`      | `https://n8n-monprojet.onrender.compostgresql`    | (optionnel) URL Render |
 
 ---
 
