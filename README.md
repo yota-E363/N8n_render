@@ -3,7 +3,7 @@
 [![n8n](https://img.shields.io/badge/n8n-automatisation-blue?logo=n8n)](https://n8n.io/)  
 [![Render](https://img.shields.io/badge/Render-deployment-green?logo=render)](https://render.com/)  
 [![Licence MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](./LICENSE)  
-[![Site démo](https://n8n-render-auto-yf0i.onrender.com](https://n8n-render-auto-yf0i.onrender.com)
+[![Site démo](https://img.shields.io/badge/Démo-en%20ligne-orange)](https://n8n-render-auto-yf0i.onrender.com)
 
 ---
 
