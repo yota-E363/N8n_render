@@ -1,74 +1,70 @@
-# 🚀 n8n sur Render
+[![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)](https://n8n.io/) 
+[![Banner image](https://img.shields.io/badge/Render-deployment-green?logo=render)](https://render.com/)
+
+# 🚀 n8n Automatisé sur Render
 
 [![n8n](https://img.shields.io/badge/n8n-automatisation-blue?logo=n8n)](https://n8n.io/)  
 [![Render](https://img.shields.io/badge/Render-deployment-green?logo=render)](https://render.com/)  
-[![Licence MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](./LICENSE)  
-[![Site démo](https://img.shields.io/badge/Démo-en%20ligne-orange)](https://n8n-render-auto-yf0i.onrender.com)
+[![Licence MIT](https://img.shields.io/badge/Licence-MIT-yellow.svg)](https://github.com/yota-E363/N8n-n8n_public/blob/main/LICENSE.md)  
+[![Site Démo](https://img.shields.io/badge/Démo-en%20ligne-orange)](https://n8n-render-auto-yf0i.onrender.com)
 
 ---
 
 ## 📌 Présentation
 
-Ce projet permet d’héberger **[n8n](https://n8n.io/)** (un outil d’automatisation de workflows open-source, similaire à Zapier) gratuitement sur **[Render](https://render.com/)**.  
+Ce projet permet d’héberger **[n8n](https://n8n.io/)** (outil open-source d’automatisation de workflows, similaire à Zapier) gratuitement sur **[Render](https://render.com/)**.  
 
-👉 Une fois déployé, il est accessible en ligne et utilisable par tout le monde pour créer ses propres automatisations.
+L’instance est **accessible en ligne**, sécurisée et capable de recevoir **des webhooks publics** pour automatiser vos services connectés.
 
 ---
 
-## 🌍 Démo en ligne
+## 🌍 Accéder au site
 
 🔗 [**Accéder à l’instance publique de n8n**](https://n8n-render-auto-yf0i.onrender.com)  
+
+> ✅ Triggers et webhooks fonctionnent immédiatement grâce à l’URL publique fournie par Render.  
+> ⚡ Aucun tunnel externe (Ngrok) nécessaire.  
 
 ---
 
 ## ⚡ Déploiement sur Render
 
-### 1. Forker ce dépôt
-Cliquez sur **[Fork](https://docs.github.com/fr/get-started/quickstart/fork-a-repo)** pour créer votre copie du projet.
+### 1️⃣ Forker ce dépôt
+Créez votre copie en cliquant sur **[Fork](https://docs.github.com/fr/get-started/quickstart/fork-a-repo)**.
 
-### 2. Déployer
+### 2️⃣ Créer le service Web sur Render
 1. Connectez-vous sur [Render](https://render.com/)  
 2. Créez un **nouveau service Web**  
 3. Connectez votre dépôt GitHub  
-4. Configurez les variables d’environnement (voir ci-dessous)  
+4. Configurez les **variables d’environnement** (voir ci-dessous)  
 5. Cliquez sur **Deploy** 🚀  
 
 ---
 
-## 🔧 Variables d’environnement
+## 🔧 Variables d’environnement à configurer dans Render
 
-À configurer dans **Render → Environment** :
+| Nom                       | Exemple                         | Description |
+|----------------------------|---------------------------------|-------------|
+| `N8N_BASIC_AUTH_ACTIVE`    | `true`                          | Active l’authentification |
+| `N8N_BASIC_AUTH_USER`      | `coeurcy`                       | Nom d’utilisateur |
+| `N8N_BASIC_AUTH_PASSWORD`  | `*************`                | Mot de passe |
+| `N8N_ENCRYPTION_KEY`       | `*************`             | Clé de chiffrement pour sécuriser les données |
+| `WEBHOOK_TUNNEL_URL`       | `https://n8n-render-auto-yf0i.onrender.com` | URL publique pour webhooks |
+| `GENERIC_TIMEZONE`         | `Africa/Congo-Brazzaville`                  | Fuseau horaire des workflows |
+| `DB_TYPE`                  | `sqlite`                        | Type de base de données |
+| `DB_SQLITE_DATABASE`       | `/home/node/n8n/database.sqlite` | Chemin du fichier SQLite |
 
-| Nom                       | Exemple           | Description |
-|----------------------------|------------------|-------------|
-| `N8N_BASIC_AUTH_ACTIVE`   | `true`           | Active l’authentification |
-| `N8N_BASIC_AUTH_USER`     | `admin`          | Nom d’utilisateur |
-| `N8N_BASIC_AUTH_PASSWORD` | `motdepassefort`  | Mot de passe |
-| `N8N_ENCRYPTION_KEY`      | `clé_ultra_secrète` | Clé de chiffrement |
-| `N8N_HOST`      | `n8n-n8n_render_auto.onrender.com`    | (optionnel) URL Render |
-| `WEBHOOK_TUNNEL_URL`      | `https://n8n-monprojet.onrender.compostgresql`    | (optionnel) URL Render |
-
----
-
-## 📚 Ressources utiles
-
-- 📖 [Documentation officielle n8n](https://docs.n8n.io/)  
-- 📦 [Docker Hub – n8n](https://hub.docker.com/r/n8nio/n8n)  
-- 🛠️ [Guide Render](https://render.com/docs)  
+> 💡 Astuce : tous les secrets doivent être **entrés directement dans Render**, pas sur GitHub.
 
 ---
 
-## 🤝 Contribution
+## 📚 Commandes utiles pour N8N
 
-Les contributions sont les bienvenues :  
-- Ouvrez une **[issue](../../issues)** pour signaler un bug ou une idée  
-- Proposez une **pull request** avec vos améliorations  
+### Lancer N8N en local (Docker)
+```bash
+docker build -t n8n .
+docker run -p 5678:5678 --env-file .env n8n
 
----
+n8n import:workflow --input=/path/to/file.json
 
-## 📜 Licence
-
-Ce projet est sous licence **[MIT](./LICENSE)**.  
-Vous êtes libres de l’utiliser, le modifier et le partager.  
-
----
+n8n export:workflow --all
