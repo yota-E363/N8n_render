@@ -6,7 +6,7 @@ services:
     autoDeploy: true
     docker:
       image: n8nio/n8n
-    envVars:
+    envVars:image: n8nio/n8n
       # Authentification Basic
       - key: N8N_BASIC_AUTH_ACTIVE
         value: "true"
